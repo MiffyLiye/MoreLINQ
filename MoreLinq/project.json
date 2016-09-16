@@ -1,28 +1,36 @@
 ﻿{
-    "name": "MoreLinq.Core",
+    "name": "MoreLinq",
     "version": "2.0.0-beta04",
     "buildOptions": {
         "debugType": "portable",
         "emitEntryPoint": false,
         "warningsAsErrors": true,
-        "compile": {
-            "exclude": [
-                "SequenceException.cs",
-                "ToDataTable.cs",
-                "GroupAdjacent.cs",
-                "Trace.cs"
-            ]
-        }
+        "define": [
+            "TRACE",
+            "DEBUG",
+            "MORELINQ",
+            "NO_SERIALIZATION_ATTRIBUTES",
+            "NO_EXCEPTION_SERIALIZATION",
+            "NO_TRACING",
+            "NO_COM"
+        ],
+        "xmlDoc": true
     },
     "frameworks": {
-        "netcoreapp1.0": {
-            "dependencies": {
-                "Microsoft.NETCore.App": {
-                    "type": "platform",
-                    "version": "1.0.0"
-                }
+        "netstandard1.6": {
+            "buildOptions": {
+                "compile": {
+                    "exclude": [
+                        "ToDataTable.cs"
+                    ]
+                },
+                "define": [
+                    "NO_EXCEPTION_SERIALIZATION"
+                ]
             },
-            "imports": "dnxcore50"
+            "dependencies": {
+                "NETStandard.Library": "1.6.0"
+            }
         }
     }
 }

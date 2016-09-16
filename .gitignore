@@ -40,3 +40,6 @@ _ReSharper*/
 !**/packages/build/
 
 docs/
+
+.vscode/
+*.lock.json
