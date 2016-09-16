@@ -1,6 +1,14 @@
 ﻿{
-    "name": "MoreLinq",
-    "version": "2.0.0-beta04",
+    "name": "MoreLinq.Core",
+    "title": "MoreLinq (.NET Core)",
+    "authors": [
+        "MoreLINQ Developers"
+    ],
+    "tags": [
+        "linq",
+        "extensions"
+    ],
+    "version": "2.0.0-beta04-2",
     "buildOptions": {
         "debugType": "portable",
         "emitEntryPoint": false,
