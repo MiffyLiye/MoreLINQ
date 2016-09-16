@@ -43,3 +43,4 @@ docs/
 
 .vscode/
 *.lock.json
+lib/nunit.runners/
