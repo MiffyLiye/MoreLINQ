@@ -1,30 +1,30 @@
-﻿{
+{
     "name": "MoreLinq.Core",
-    "title": "MoreLinq (.NET Core)",
+    "title": "MoreLinq (.NET 3.5, PCL, and .NET Core)",
     "authors": [
         "MoreLINQ Developers"
     ],
-    "tags": [
-        "linq",
-        "extensions"
-    ],
-    "version": "2.0.0-beta04-2",
+    "packOptions": {
+        "tags": [
+            "linq",
+            "extensions"
+        ]
+    },
+    "version": "2.0.0-beta04-3",
     "buildOptions": {
         "debugType": "portable",
         "emitEntryPoint": false,
         "warningsAsErrors": true,
-        "define": [
-            "TRACE",
-            "DEBUG",
-            "MORELINQ",
-            "NO_SERIALIZATION_ATTRIBUTES",
-            "NO_EXCEPTION_SERIALIZATION",
-            "NO_TRACING",
-            "NO_COM"
-        ],
         "xmlDoc": true
     },
     "frameworks": {
+        "net35": {
+            "frameworkAssemblies": {
+                "System.Data.DataSetExtensions": "3.5.0.0",
+                "System.Data": "2.0.0.0",
+                "System.Xml": "2.0.0.0"
+            }
+        },
         "netstandard1.6": {
             "buildOptions": {
                 "compile": {
@@ -33,11 +33,38 @@
                     ]
                 },
                 "define": [
-                    "NO_EXCEPTION_SERIALIZATION"
+                    "TRACE",
+                    "MORELINQ",
+                    "NO_SERIALIZATION_ATTRIBUTES",
+                    "NO_EXCEPTION_SERIALIZATION",
+                    "NO_TRACING",
+                    "NO_COM"
                 ]
             },
             "dependencies": {
                 "NETStandard.Library": "1.6.0"
+            }
+        },
+        ".NETPortable,Version=v4.0,Profile=Profile328": {
+            "buildOptions": {
+                "compile": {
+                    "exclude": [
+                        "ToDataTable.cs"
+                    ]
+                },
+                "define": [
+                    "TRACE",
+                    "MORELINQ",
+                    "NO_SERIALIZATION_ATTRIBUTES",
+                    "NO_EXCEPTION_SERIALIZATION",
+                    "NO_TRACING",
+                    "NO_COM"
+                ]
+            },
+            "frameworkAssemblies": {
+                "mscorlib": "",
+                "System": "",
+                "System.Core": ""
             }
         }
     }
