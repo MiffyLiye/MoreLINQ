@@ -1,8 +1,10 @@
 # MoreLINQ
 
+[![Build status](https://ci.appveyor.com/api/projects/status/v79l8mtfqhu0nhqo/branch/master?svg=true)](https://ci.appveyor.com/project/MiffyLiye/morelinq/branch/master)
+
 LINQ to Objects is missing a few desirable features.
 
-This project enhances LINQ to Objects with extra methods, in a manner which 
+This project enhances LINQ to Objects with extra methods, in a manner which
 keeps to the spirit of LINQ.
 
 MoreLINQ is available for download and installation as
@@ -41,7 +43,7 @@ Operator             | Summary
 `Lead`               | Produces a projection of a sequence by evaluating pairs of elements separated by a positive offset. This method has 2 overloads.
 `MaxBy`              | Returns the maximal element of the given sequence, based on the given projection. This method has 2 overloads.
 `MinBy`              | Returns the minimal element of the given sequence, based on the given projection. This method has 2 overloads.
-`NestedLoops`        | Produces a sequence from an action based on the dynamic generation of N nested loops who iteration counts are defined by 
+`NestedLoops`        | Produces a sequence from an action based on the dynamic generation of N nested loops who iteration counts are defined by
 `OrderBy`            | Sorts the elements of a sequence in a particular direction (ascending, descending) according to a key. This method has 2 overloads.
 `OrderedMerge`       | Merges two ordered sequences into one. Where the elements equal in both sequences, the element from the first sequence is returned in the resulting sequence. This method has 7 overloads.
 `Pad`                | Pads a sequence with default values if it is narrower (shorter in length) than a given width. This method has 3 overloads.
