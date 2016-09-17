@@ -4,9 +4,17 @@ init:
   - ps: .\dotnet-install.ps1 -Version 1.0.0-preview2-003121
   - ps: Remove-Item .\dotnet-install.ps1
 build_script:
-  - ps: .\build.ps1
+  - ps: dotnet --info
+  - ps: dotnet restore
+  - ps: dotnet build -c Debug .\*\project.json
+  - ps: dotnet build -c Release .\*\project.json
 test_script:
-  - ps: .\test.ps1
+  - ps: Remove-Item -Recurse .\tools\NUnit.Runners.*
+  - ps: .\tools\nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory tools
+  - ps: .\tools\NUnit.Runners.*\tools\nunit-console.exe .\MoreLinq.Test\bin\Debug\net40\MoreLinq.Test.dll
+  - ps: .\tools\NUnit.Runners.*\tools\nunit-console.exe .\MoreLinq.Test\bin\Release\net40\MoreLinq.Test.dll
+  - ps: .\tools\NUnit.Runners.*\tools\nunit-console.exe .\MoreLinq.Test\bin\Debug\net40-client\MoreLinq.Test.dll
+  - ps: .\tools\NUnit.Runners.*\tools\nunit-console.exe .\MoreLinq.Test\bin\Release\net40-client\MoreLinq.Test.dll
 after_build:
-  - ps: .\pack.ps1
+  - ps: dotnet pack -c Release .\MoreLinq\project.json
   - ps: $root = Resolve-Path .\MoreLinq\bin\Release; [IO.Directory]::GetFiles($root.Path, '*.*', 'AllDirectories') | % { Push-AppveyorArtifact $_ -FileName $_.Substring($root.Path.Length + 1) -DeploymentName to-publish }
