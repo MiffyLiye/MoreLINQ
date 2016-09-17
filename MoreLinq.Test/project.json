@@ -29,10 +29,10 @@
     "frameworks": {
         "net4": {
             "frameworkAssemblies": {
-                "System.Data.DataSetExtensions": "3.5.0.0",
-                "System.Data": "2.0.0.0",
-                "System.Xml": "2.0.0.0",
-                "System.Xml.Linq": "3.5.0.0"
+                "System.Data.DataSetExtensions": "4.0.0.0",
+                "System.Data": "4.0.0.0",
+                "System.Xml": "4.0.0.0",
+                "System.Xml.Linq": "4.0.0.0"
             }
         },
         ".NETFramework,Version=v4.0,Profile=Client": {
